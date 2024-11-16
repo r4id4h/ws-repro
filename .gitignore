@@ -1,0 +1,5 @@
+.idea
+.nuxt
+target
+node_modules
+.output
