@@ -18,7 +18,6 @@ proxy.on('error', (err, req, socket) => {
 export default defineEventHandler((event) => {
     const { req, res } = event.node;
 
-    // WebSocket-Upgrade überprüfen
     if (req.headers.upgrade && req.headers.upgrade.toLowerCase() === 'websocket') {
         console.log('WebSocket-Req:', req.url);
         proxy.ws(req, req.socket, event.node.rawHead || Buffer.alloc(0));
